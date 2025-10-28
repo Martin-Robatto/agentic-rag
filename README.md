@@ -58,7 +58,7 @@ Install dependencies
 Start the Agentic Rag flow
 
 ```bash
-  python main.py
+  pipenv run start
 ```
 
 ## Running Tests
@@ -66,7 +66,7 @@ Start the Agentic Rag flow
 To run tests, run the following command
 
 ```bash
-  python pytest . -s -v
+  pipenv run test
 ```
 ## Acknowledgements
 

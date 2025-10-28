@@ -5,18 +5,29 @@ name = "pypi"
 
 [packages]
 beautifulsoup4 = "*"
-langchain = "*"
 langgraph = "*"
 langchainhub = "*"
-langchain-community = "*"
 tavily-python = "*"
-pinecone = "*"
 python-dotenv = "*"
 black = "*"
 isort = "*"
 pytest = "*"
+pinecone = "*"
+langchain = "*"
+langchain-core = "*"
+langchain-community = "*"
+langchain-openai = "*"
+langchain-text-splitters = "*"
+langchain-pinecone = "*"
 
 [dev-packages]
+ipykernel = "*"
 
 [requires]
 python_version = "3.13"
+
+[scripts]
+start = "python main.py"
+test = "pytest tests/ -s -v"
+ingest = "python ingestion.py --ingest"
+query = "python ingestion.py"
