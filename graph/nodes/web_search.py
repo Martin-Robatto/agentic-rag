@@ -1,28 +1,33 @@
 from dotenv import load_dotenv
+
 load_dotenv()
 from typing import Any, Dict
 import sys
 import os
-sys.path.append(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
+
+sys.path.append(
+    os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+)
 from graph.state import GraphState
 from langchain.schema import Document
 from langchain_tavily import TavilySearch
 
 web_search_tool = TavilySearch(max_results=3)
 
+
 def web_search(state: GraphState) -> Dict[str, Any]:
     """
     Performs a web search for the question.
-    
+
     Args:
     state (dict): The current graph state.
-    
+
     Returns:
     state (dict): The current graph state with the web search results.
     """
-    
+
     print("Let me search the web for you ...")
-    
+
     question = state["question"]
     if "documents" in state:
         documents = state["documents"]
